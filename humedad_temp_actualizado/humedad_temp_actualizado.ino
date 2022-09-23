@@ -170,7 +170,7 @@ void reconnect() {
 
 float interpretarHumedad(float humedad, float valor0, float valor100){
   float retorno = 0;
-  retorno = 100*(1 + (humedad-valor100)/(valor0-valor100) );
+  retorno = 100*(humedad-valor0)/(valor100-valor0);
   return retorno;
 }
 
@@ -228,7 +228,7 @@ void loop() {
     DynamicJsonDocument resp(256);
 
     resp["tempObj"] = tempObj;
-    resp["tempAmb"] = tempAmb;  //Agrega el dato al Json, ej: "temperature": 21.5
+    resp["tempAmb"] = tempAmb;        //Agrega el dato al Json, ej: "temperature": 21.5
     resp["humidity"] = humidity;        //Agrega el dato al Json, ej: "humidituy: 75.0
 
     char buffer[256];
