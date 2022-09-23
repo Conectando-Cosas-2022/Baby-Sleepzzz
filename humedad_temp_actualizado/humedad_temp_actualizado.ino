@@ -45,7 +45,7 @@ float tempObj = 0;     // Temperatura del bebé
 
 // Valores de calibración sensor de humedad
 float valor0 = 1024;
-float valor100 = 400;
+float valor100 = 250;
 
 boolean led_state = false;
 
