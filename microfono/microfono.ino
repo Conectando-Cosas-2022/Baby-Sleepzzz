@@ -3,11 +3,12 @@
 #include <ArduinoJson.h>        // Biblioteca para manejar Json en Arduino
 #include "DHT.h"                // Biblioteca para trabajar con DHT 11 (Sensor de temperatura y humedad)
 
+
 /*========= CONSTANTES =========*/ //----------------------------------------------------------------------------------------------------------------------
 
 // Credenciales de la red WiFi
-const char* ssid = "TP-LINK_Wi-Fi"; // HUAWEI-IoT
-const char* password = "cancun31"; //ORTWiFiIoT
+const char* ssid = "HUAWEI-IoT";
+const char* password = "ORTWiFiIoT";
 
 // Host de ThingsBoard
 const char* mqtt_server = "demo.thingsboard.io";
@@ -34,14 +35,14 @@ DHT dht(DHT_PIN, DHTTYPE);
 
 // Declaración de variables para los datos a manipular
 unsigned long lastMsg = 0;  // Control de tiempo de reporte
-int msgPeriod = 2000;  // Actualizar los datos cada 2 segundos
+int msgPeriod = 200;  // Actualizar los datos cada 0.2 segundos
 
 
 float valorAnalog = 0;
 int valorDigital = 0;
 
 
-
+bool flagAttribute = false;
 
 
 
@@ -123,23 +124,23 @@ void callback(char* topic, byte* payload, unsigned int length) { //-------------
 
     } else if (metodo == "setLedStatus") {  // Establecer el estado del led y reflejar en el atributo relacionado
       boolean estado = incoming_message["params"];  // Leer los parámetros del método
-
-      if (estado) {
-        digitalWrite(LED_BUILTIN, LOW);  // Encender LED
-        Serial.println("Encender LED");
-      } else {
-        digitalWrite(LED_BUILTIN, HIGH);  // Apagar LED
-        Serial.println("Apagar LED");
-      }
+      flagAttribute = !flagAttribute;
+      Serial.println("llegueeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeMOVILeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee");
 
       // Actualizar el atributo relacionado
       DynamicJsonDocument resp(256);
-      resp["estado"] = !digitalRead(LED_BUILTIN);
+      resp["estado"] = flagAttribute;
       char buffer[256];
       serializeJson(resp, buffer);
       client.publish("v1/devices/me/attributes", buffer);  //Topico para actualizar atributos
       Serial.print("Publish message [attribute]: ");
       Serial.println(buffer);
+    }
+    else{
+      Serial.print("----------------------------------------------------------------------");
+      Serial.print(metodo);
+      Serial.print(WiFi.localIP());
+      Serial.print("----------------------------------------------------------------------");
     }
   }
 }
@@ -221,16 +222,24 @@ void loop() {
     /* ====== LECTURA DE SENSORES ====== */
 
     valorAnalog = analogRead(analogInPin);
-    Serial.println(valorAnalog);
+    //Serial.println(valorAnalog);
     //valorDigital = digitalRead(digitalPinMic);
     //Serial.println(valorDigital);
 
     /* ====== LECTURA DE SENSORES ====== */
 
-
-
-    // Publicar los datos en el tópico de telemetría para que el servidor los reciba
+     // Actualizar el atributo relacionado ????????????????????????????????????????????????????????????????????????
+    char buffer[256];
     DynamicJsonDocument resp(256);
+    resp["estado"] = flagAttribute;
+    //char buffer[256];
+    serializeJson(resp, buffer);
+    client.publish("v1/devices/me/attributes", buffer);  //Topico para actualizar atributos
+    Serial.print("Publish message [attribute]: ");
+    Serial.println(buffer);
+    // ????????????????????????????????????????????????????????????????????????????????????????????????????????????
+    // Publicar los datos en el tópico de telemetría para que el servidor los reciba
+    //DynamicJsonDocument resp(256);
 
     resp["analog"] = valorAnalog;
     //resp["digital"] = valorDigital;
@@ -239,7 +248,7 @@ void loop() {
     resp["tempAmb"] = tempAmb;        //Agrega el dato al Json, ej: "temperature": 21.5
     resp["humidity"] = humidity;        //Agrega el dato al Json, ej: "humidituy: 75.0
 */
-    char buffer[256];
+    //char buffer[256];
     serializeJson(resp, buffer);
     client.publish("v1/devices/me/telemetry", buffer);  // Publica el mensaje de telemetría
     Serial.print("Publicar mensaje [telemetry]: ");
