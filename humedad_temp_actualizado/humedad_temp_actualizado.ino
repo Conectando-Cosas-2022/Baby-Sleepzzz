@@ -12,6 +12,8 @@ Adafruit_MLX90614 mlx = Adafruit_MLX90614();  //sensor de temperatura
 // Credenciales de la red WiFi
 const char* ssid = "HUAWEI-IoT";
 const char* password = "ORTWiFiIoT";
+//const char* ssid = "TP-LINK_Wi-Fi";
+//const char* password = "cancun31";
 
 // Host de ThingsBoard
 const char* mqtt_server = "demo.thingsboard.io";
@@ -22,6 +24,7 @@ const char* token = "uteJNfjnPIEGCXfNZLBa";
 
 // Tipo de sensor
 const int analogInPin = A0;  // Analog input pin that the potentiometer is attached to
+const int pinMotor = 2;
 #define DHTTYPE DHT11  // DHT 11
 #define DHT_PIN A0  // Conexión en PIN D3
 
@@ -46,6 +49,7 @@ float tempObj = 0;     // Temperatura del bebé
 // Valores de calibración sensor de humedad
 float valor0 = 1024;
 float valor100 = 250;
+bool flagAttribute = false;
 
 boolean led_state = false;
 
@@ -122,8 +126,8 @@ void callback(char* topic, byte* payload, unsigned int length) { //-------------
       client.publish(outTopic, buffer);
 
     } else if (metodo == "setLedStatus") {  // Establecer el estado del led y reflejar en el atributo relacionado
-      boolean estado = incoming_message["params"];  // Leer los parámetros del método
-
+     // boolean estado = incoming_message["params"];  // Leer los parámetros del método
+/*
       if (estado) {
         digitalWrite(LED_BUILTIN, LOW);  // Encender LED
         Serial.println("Encender LED");
@@ -131,15 +135,29 @@ void callback(char* topic, byte* payload, unsigned int length) { //-------------
         digitalWrite(LED_BUILTIN, HIGH);  // Apagar LED
         Serial.println("Apagar LED");
       }
-
+  */
+    } else if(metodo == "prenderMotor"){
+     
+      boolean estado = incoming_message["params"];  // Leer los parámetros del método
+      if(estado){
+        analogWrite(pinMotor, 26);
+        Serial.print("______________________________ON________________________________");
+      } else {
+        analogWrite(pinMotor, 0);
+        Serial.print("______________________________OFF________________________________");
+      }
+      
+      Serial.print("Estoy en prender motor");
       // Actualizar el atributo relacionado
+      /*
       DynamicJsonDocument resp(256);
-      resp["estado"] = !digitalRead(LED_BUILTIN);
+      resp["estado"] = flagAttribute;
       char buffer[256];
       serializeJson(resp, buffer);
       client.publish("v1/devices/me/attributes", buffer);  //Topico para actualizar atributos
       Serial.print("Publish message [attribute]: ");
       Serial.println(buffer);
+      */
     }
   }
 }
@@ -192,6 +210,7 @@ void setup() {
   // Sensores y actuadores
   pinMode(LED_BUILTIN, OUTPUT);  // Inicializar el LED como salida
   pinMode(DHT_PIN, INPUT);  // Inicializar el DHT como entrada
+  pinMode(pinMotor, OUTPUT);
   dht.begin();  // Iniciar el sensor DHT
 }
 
