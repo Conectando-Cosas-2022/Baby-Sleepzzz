@@ -10,10 +10,12 @@ Adafruit_MLX90614 mlx = Adafruit_MLX90614();  //sensor de temperatura
 /*========= CONSTANTES =========*/ //----------------------------------------------------------------------------------------------------------------------
 
 // Credenciales de la red WiFi
-const char* ssid = "HUAWEI-IoT";
-const char* password = "ORTWiFiIoT";
+//const char* ssid = "HUAWEI-IoT";
+//const char* password = "ORTWiFiIoT";
 //const char* ssid = "TP-LINK_Wi-Fi";
 //const char* password = "cancun31";
+const char* ssid = "Nico Valdes";
+const char* password = "11111111";
 
 // Host de ThingsBoard
 const char* mqtt_server = "demo.thingsboard.io";
@@ -40,7 +42,7 @@ DHT dht(DHT_PIN, DHTTYPE);
 
 // Declaración de variables para los datos a manipular
 unsigned long lastMsg = 0;  // Control de tiempo de reporte
-int msgPeriod = 2000;  // Actualizar los datos cada 2 segundos
+int msgPeriod = 500;  // Actualizar los datos cada 2 segundos
 
 float humidity = 0;    // Humedad del colchón
 float tempAmb = 0;     // Temperatura ambiente

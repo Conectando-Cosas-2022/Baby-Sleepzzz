@@ -9,8 +9,10 @@
 
 
 // Credenciales de la red WiFi
-const char* ssid = "Ale R";
-const char* password = "aler1234";
+//const char* ssid = "HUAWEI-IoT";
+//const char* password = "ORTWiFiIoT";
+const char* ssid = "Nico Valdes";
+const char* password = "11111111";
 
 
 // Host de ThingsBoard
@@ -45,13 +47,31 @@ DHT dht(DHT_PIN, DHTTYPE);
 
 // Declaración de variables para los datos a manipular
 unsigned long lastMsg = 0;  // Control de tiempo de reporte
-int msgPeriod = 1000;  // Actualizar los datos cada 0.2 segundos
+int msgPeriod = 500;  // Actualizar los datos cada 0.2 segundos
 
 float valorAnalog = 0;
 int valorDigital = 0;
 
 bool flagAttribute = false;
 double frecuencia = 0.0;
+/*
+const int tamanioBuffer = 4;
+const double threshold = 1800.00;
+
+bool arrayLlanto[tamanioBuffer];
+int contador = 0;
+*/
+
+
+// VARIABLES MEDICION LLANTO --------------------------------------
+const double freq_threshold = 1800.00; //Hz
+const double time_threshold = 2000; //ms
+bool maybe_crying = false;
+double time_maybe_crying = 0; //ms
+bool last_state = false;
+bool current_state = false;
+// -----------------------------------------------------------------
+
 
 /*
 These are the input and output vectors
@@ -142,6 +162,7 @@ void callback(char* topic, byte* payload, unsigned int length) { //-------------
       client.publish(outTopic, buffer);
 
     } else if (metodo == "setLedStatus") {  // Establecer el estado del led y reflejar en el atributo relacionado
+      /*
       boolean estado = incoming_message["params"];  // Leer los parámetros del método
       flagAttribute = !flagAttribute;
       if(flagAttribute){
@@ -161,6 +182,7 @@ void callback(char* topic, byte* payload, unsigned int length) { //-------------
       client.publish("v1/devices/me/attributes", buffer);  //Topico para actualizar atributos
       Serial.print("Publish message [attribute]: ");
       Serial.println(buffer);
+      */
     }
     else{
       Serial.print("----------------------------------------------------------------------");
@@ -177,7 +199,7 @@ void reconnect() {
   
   // Bucle hasta lograr la conexión
   while (!client.connected()) {
-    Serial.print("Intentando conectar MQTT...");
+    Serial.print("Intentando conectar MQTT... ");
     if (client.connect("ESP8266", token, token)) {  //Nombre del Device y Token para conectarse
       Serial.println("¡Conectado!");
 
@@ -189,51 +211,66 @@ void reconnect() {
       Serial.print(client.state());
 
       // Esperar 5 segundos antes de reintentar
-      Serial.println("Reintenar en 5 segundos...");
+      Serial.println(" Reintenar en 5 segundos...");
       delay(5000);
     }
   }
 }
 
+/*
+bool elNeneEstaBien(double lastTelemetry, bool arrayLlanto[], int contador){
+  //agrega ultima telemetria a array llanto
+  bool aux = false;
+  if(lastTelemetry > threshold){
+    aux = true;
+  }
+  Serial.println("T:" + aux);
+  arrayLlanto[contador] = aux;
+  contador++;
+  if(contador == tamanioBuffer){contador = 0;}
+
+  //si las ultimas "tamanioBuffer" lecturas superan "threshold", el bebé llora
+  bool retorno = true;
+  for(int i = 0; retorno && i<10; i++){
+    if(!arrayLlanto[i]){
+      retorno = false;
+    }
+  }
+  Serial.println("R:" + retorno);
+  return retorno;
+}
 
 
 
-
-
-
+*/
 
 
 /*========= SETUP =========*/ //------------------------------------------------------------------------------------------------------------------------------
 void setup() {
-  delay(0);
-  ESP.wdtDisable();
+
   // Conectividad
   Serial.begin(115200);  // Inicializar conexión Serie para utilizar el Monitor
   setup_wifi();  // Establecer la conexión WiFi
   client.setServer(mqtt_server, mqtt_port);  // Establecer los datos para la conexión MQTT
   client.setCallback(callback);  // Establecer la función del callback para la llegada de mensajes en tópicos suscriptos
-Serial.println("El primero");
-ESP.wdtFeed();
+
   pinMode(analogInPin, INPUT);
-  ESP.wdtFeed();
   pinMode(digitalPinMic, INPUT);
-  ESP.wdtFeed();
-  pinMode(pinMotor, OUTPUT);
-ESP.wdtFeed();
   // Sensores y actuadores
   pinMode(LED_BUILTIN, OUTPUT);  // Inicializar el LED como salida
   pinMode(DHT_PIN, INPUT);  // Inicializar el DHT como entrada
-  Serial.println("Antes del dht");
   dht.begin();  // Iniciar el sensor DHT}
-ESP.wdtFeed();
-Serial.println("El segundo");
+
   // FFT
   sampling_period_us = round(1000000*(1.0/samplingFrequency));
+
+  //for(int i = 1; i<=tamanioBuffer; i++){
+  //  arrayLlanto[i-1] = false;
+  //}
 }
 
 
 /*========= BUCLE PRINCIPAL =========*/ //---------------------------------------------------------------------------------------------------------------------
-
 void loop() {
   
   // === Conexión e intercambio de mensajes MQTT ===
@@ -241,7 +278,7 @@ void loop() {
     reconnect();  // Y recuperarla en caso de desconexión
   }
   client.loop();  // Controlar si hay mensajes entrantes o para enviar al servidor
-Serial.println("Antes del analog");
+
   // === Realizar las tareas asignadas al dispositivo ===
 
   // En este caso se medirá temperatura y humedad para reportar periódicamente
@@ -255,36 +292,57 @@ Serial.println("Antes del analog");
     /* ====== LECTURA DE SENSORES ====== */
     frecuencia = lecturaFFT();
     valorAnalog = analogRead(analogInPin);
-    Serial.println(valorAnalog);
-    //valorDigital = digitalRead(digitalPinMic);
-    //Serial.println(valorDigital);
-
+    Serial.println(frecuencia);
+    
     /* ====== LECTURA DE SENSORES ====== */
 
-     // Actualizar el atributo relacionado ????????????????????????????????????????????????????????????????????????
+    // Actualizar el atributo relacionado ????????????????????????????????????????????????????????????????????????
     char buffer[256];
     DynamicJsonDocument resp(256);
+
+    /* ========== ¿LLORA EL BEBE? ============ */
+    if(frecuencia < freq_threshold){ 
+      maybe_crying = false;
+      resp["llora"] = false;
+      current_state = false;
+
+    } else if(frecuencia >= freq_threshold && !maybe_crying){ 
+      time_maybe_crying = millis();
+      maybe_crying = true;
+      resp["llora"] = false;
+      current_state = false;
+
+    } else if(frecuencia >= freq_threshold && maybe_crying){ //proximos llantos
+      if(millis() - time_maybe_crying > time_threshold){
+        resp["llora"] = true;
+        current_state = true;
+        
+      }
+    }
+    /* ========== ¿LLORA EL BEBE? ============ */
+
     resp["estado"] = flagAttribute;
-    //char buffer[256];
-    serializeJson(resp, buffer);
-    client.publish("v1/devices/me/attributes", buffer);  //Topico para actualizar atributos
-    //Serial.print("Publish message [attribute]: ");
-    //Serial.println(buffer);
-    // ????????????????????????????????????????????????????????????????????????????????????????????????????????????
+    // resp["llora"] = elNeneEstaBien(frecuencia, arrayLlanto, contador);
+    if(last_state != current_state){
+      serializeJson(resp, buffer);
+      client.publish("v1/devices/me/attributes", buffer);  //Topico para actualizar atributos
+    }
+    last_state = current_state;
     // Publicar los datos en el tópico de telemetría para que el servidor los reciba
-    //DynamicJsonDocument resp(256);
 
     resp["analog"] = valorAnalog;
-    //resp["digital"] = valorDigital;
     resp["frecuencia"] = frecuencia;
 
-    //char buffer[256];
     serializeJson(resp, buffer);
     client.publish("v1/devices/me/telemetry", buffer);  // Publica el mensaje de telemetría
-    //Serial.print("Publicar mensaje [telemetry]: ");
-    //Serial.println(buffer);
   }
 }
+
+
+
+
+
+
 
 double lecturaFFT(){
   microseconds = micros();
