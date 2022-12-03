@@ -464,7 +464,7 @@
         "entityType" : "RULE_NODE",
         "id" : "e43e4410-6548-11ed-a839-694107b1a179"
       },
-      "name" : "FILTRO MEO",
+      "name" : "FILTRO ORINA",
       "ruleChainId" : null,
       "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
     }, {
