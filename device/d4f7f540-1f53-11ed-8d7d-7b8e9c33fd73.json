@@ -1,0 +1,162 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : {
+      "gateway" : false,
+      "overwriteActivityTime" : false,
+      "description" : ""
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "2ec45b70-405d-11ed-b827-c9be76c6f5d7"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "4c5def70-1f51-11ed-8d7d-7b8e9c33fd73"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "d4f7f540-1f53-11ed-8d7d-7b8e9c33fd73"
+    },
+    "label" : "",
+    "name" : "Temperatura y Humedad",
+    "softwareId" : null,
+    "type" : "thermometer"
+  },
+  "credentials" : {
+    "credentialsId" : "uteJNfjnPIEGCXfNZLBa",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "DEVICE",
+      "id" : "85ce37f0-54bd-11ed-a339-0708081d40ce"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "d4f7f540-1f53-11ed-8d7d-7b8e9c33fd73"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "98204b20-5fa1-11ed-885b-d1d049781439"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "d4f7f540-1f53-11ed-8d7d-7b8e9c33fd73"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "98204b20-5fa1-11ed-885b-d1d049781439"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "d4f7f540-1f53-11ed-8d7d-7b8e9c33fd73"
+    },
+    "type" : "ContainsTH",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "05a27910-3eb5-11ed-b827-c9be76c6f5d7"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "d4f7f540-1f53-11ed-8d7d-7b8e9c33fd73"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "DEVICE",
+      "id" : "0bb4b220-54a2-11ed-b827-c9be76c6f5d7"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "d4f7f540-1f53-11ed-8d7d-7b8e9c33fd73"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1670074139934,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "address",
+      "lastUpdateTs" : 1664501055494,
+      "longValue" : null,
+      "strValue" : "Ejido 1313, uy"
+    }, {
+      "booleanValue" : true,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "estado",
+      "lastUpdateTs" : 1668735533686,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1670074139934,
+      "longValue" : 1670074139622,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastActivityTime",
+      "lastUpdateTs" : 1670073515119,
+      "longValue" : 1670073513436,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastConnectTime",
+      "lastUpdateTs" : 1670070187521,
+      "longValue" : 1670070187521,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastDisconnectTime",
+      "lastUpdateTs" : 1670073513440,
+      "longValue" : 1670073513440,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ ]
+  }
+}
