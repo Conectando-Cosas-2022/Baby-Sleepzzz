@@ -1,0 +1,96 @@
+{
+  "entityType" : "ASSET",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : "Proyecto"
+    },
+    "assetProfileId" : {
+      "entityType" : "ASSET_PROFILE",
+      "id" : "344d4a40-5abe-11ed-9854-3ba4cdac5d08"
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "13814000-1dd2-11b2-8080-808080808080"
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "ASSET",
+      "id" : "98204b20-5fa1-11ed-885b-d1d049781439"
+    },
+    "label" : "",
+    "name" : "BabySleepzzz",
+    "type" : "default"
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "98204b20-5fa1-11ed-885b-d1d049781439"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "85ce37f0-54bd-11ed-a339-0708081d40ce"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "98204b20-5fa1-11ed-885b-d1d049781439"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "c74fb1c0-3ad4-11ed-b827-c9be76c6f5d7"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "98204b20-5fa1-11ed-885b-d1d049781439"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "d4f7f540-1f53-11ed-8d7d-7b8e9c33fd73"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "98204b20-5fa1-11ed-885b-d1d049781439"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "d4f7f540-1f53-11ed-8d7d-7b8e9c33fd73"
+    },
+    "type" : "ContainsTH",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "98204b20-5fa1-11ed-885b-d1d049781439"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "0bb4b220-54a2-11ed-b827-c9be76c6f5d7"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : "{\"events\":[],\"crying\":false,\"wet\":false,\"eventsAmount\":0}",
+      "key" : "SLEEP_LOG",
+      "lastUpdateTs" : 1670092196284,
+      "longValue" : null,
+      "strValue" : null
+    } ]
+  }
+}
