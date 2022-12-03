@@ -1,0 +1,277 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "2c498720-5fbc-11ed-885b-d1d049781439"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "0bbf48e0-5fb8-11ed-885b-d1d049781439"
+    },
+    "name" : "Conex Mic - Motor/Cam",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "True"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 7,
+      "type" : "True"
+    }, {
+      "fromIndex" : 2,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 5,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 2,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 3,
+      "type" : "Success"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 45,
+        "layoutY" : 244
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "return metadata.deviceName === \"Microfono\";",
+        "tbelScript" : "return metadata.deviceName == \"Microfono\";"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2c498720-5fbc-11ed-885b-d1d049781439"
+      },
+      "name" : "es microfono?",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 47,
+        "layoutY" : 327
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "return msg.llora;",
+        "tbelScript" : "return msg.llora;"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2c55e330-5fbc-11ed-885b-d1d049781439"
+      },
+      "name" : "agarro att llora",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 634,
+        "layoutY" : 229
+      },
+      "configuration" : {
+        "originatorSource" : "RELATED",
+        "entityType" : null,
+        "entityNamePattern" : null,
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Uses_M",
+            "entityTypes" : [ "DEVICE" ]
+          } ]
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2c5965a0-5fbc-11ed-885b-d1d049781439"
+      },
+      "name" : "fetch llora attribute",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 904,
+        "layoutY" : 166
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = {\n    method: \"controlCamera\",\n    params: msg.llora\n};\n\nvar newMetadata = {\n    deviceName:\"Camara\",\n    deviceType:\"thermometer\",\n    notifyDevice:false,\n    oneway:true\n};\n\nvar newMsgType = \"RPC_CALL_FROM_SERVER_TO_DEVICE\";\n\nreturn {msg: newMsg, metadata: newMetadata, msgType: newMsgType};",
+        "tbelScript" : "var newMsg = {\n    \"method\": \"controlCamera\",\n    \"params\": msg.llora\n};\n\nvar newMetadata = {\n    \"deviceName\":\"Camara\",\n    \"deviceType\":\"thermometer\",\n    \"notifyDevice\":\"true\"\n};\n\nreturn {msg: newMsg, metadata: newMetadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2c5f0af0-5fbc-11ed-885b-d1d049781439"
+      },
+      "name" : "enciendo camara",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 906,
+        "layoutY" : 230
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var newMsg = {\n    method: \"controlMotor\",\n    params: msg.llora\n};\n\nvar newMetadata = {\n    deviceName:\"Motor - Movil\",\n    deviceType:\"thermometer\",\n    notifyDevice:false,\n    oneway:true\n};\n\nvar newMsgType = \"RPC_CALL_FROM_SERVER_TO_DEVICE\";\n\nreturn {msg: newMsg, metadata: newMetadata, msgType: newMsgType};",
+        "tbelScript" : "var newMsg = {\n    \"method\": \"controlMotor\",\n    \"params\": msg.llora\n};\n\nvar newMetadata = {\n    \"deviceName\":\"Motor - Movil\",\n    \"deviceType\":\"thermometer\",\n    \"notifyDevice\":\"true\"\n};\n\nreturn {msg: newMsg, metadata: newMetadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "2c68f600-5fbc-11ed-885b-d1d049781439"
+      },
+      "name" : "enciendo motor",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1160,
+        "layoutY" : 165
+      },
+      "configuration" : {
+        "timeoutInSeconds" : 60
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f587f8a0-5fbd-11ed-885b-d1d049781439"
+      },
+      "name" : "enciendo camara",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1160,
+        "layoutY" : 231
+      },
+      "configuration" : {
+        "timeoutInSeconds" : 60
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f58f2490-5fbd-11ed-885b-d1d049781439"
+      },
+      "name" : "enciendo motor",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.rpc.TbSendRPCRequestNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 332,
+        "layoutY" : 194
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Uses",
+            "entityTypes" : [ "DEVICE" ]
+          } ]
+        },
+        "telemetry" : false,
+        "attrMapping" : {
+          "llora" : "llora"
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "de086ff0-5fce-11ed-885b-d1d049781439"
+      },
+      "name" : "agrega llora a relacion Uses device",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 635,
+        "layoutY" : 168
+      },
+      "configuration" : {
+        "originatorSource" : "RELATED",
+        "entityType" : null,
+        "entityNamePattern" : null,
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "FROM",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Uses",
+            "entityTypes" : [ "DEVICE" ]
+          } ]
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "32a0bfe0-615a-11ed-ba8d-397cb798fce2"
+      },
+      "name" : "fetch llora attribute",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}
