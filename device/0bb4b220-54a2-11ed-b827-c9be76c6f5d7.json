@@ -1,0 +1,134 @@
+{
+  "entityType" : "DEVICE",
+  "entity" : {
+    "additionalInfo" : {
+      "gateway" : false,
+      "overwriteActivityTime" : false,
+      "description" : ""
+    },
+    "customerId" : {
+      "entityType" : "CUSTOMER",
+      "id" : "13814000-1dd2-11b2-8080-808080808080"
+    },
+    "deviceData" : {
+      "configuration" : {
+        "type" : "DEFAULT"
+      },
+      "transportConfiguration" : {
+        "type" : "DEFAULT"
+      }
+    },
+    "deviceProfileId" : {
+      "entityType" : "DEVICE_PROFILE",
+      "id" : "4c5def70-1f51-11ed-8d7d-7b8e9c33fd73"
+    },
+    "externalId" : null,
+    "firmwareId" : null,
+    "id" : {
+      "entityType" : "DEVICE",
+      "id" : "0bb4b220-54a2-11ed-b827-c9be76c6f5d7"
+    },
+    "label" : "",
+    "name" : "Motor - Movil",
+    "softwareId" : null,
+    "type" : "thermometer"
+  },
+  "credentials" : {
+    "credentialsId" : "A13xQuigZHfMl930TkTU",
+    "credentialsType" : "ACCESS_TOKEN",
+    "credentialsValue" : null
+  },
+  "relations" : [ {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "ASSET",
+      "id" : "98204b20-5fa1-11ed-885b-d1d049781439"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "0bb4b220-54a2-11ed-b827-c9be76c6f5d7"
+    },
+    "type" : "Contains",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "DEVICE",
+      "id" : "c74fb1c0-3ad4-11ed-b827-c9be76c6f5d7"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "0bb4b220-54a2-11ed-b827-c9be76c6f5d7"
+    },
+    "type" : "Uses_M",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "DEVICE",
+      "id" : "0bb4b220-54a2-11ed-b827-c9be76c6f5d7"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "c74fb1c0-3ad4-11ed-b827-c9be76c6f5d7"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON"
+  }, {
+    "additionalInfo" : null,
+    "from" : {
+      "entityType" : "DEVICE",
+      "id" : "0bb4b220-54a2-11ed-b827-c9be76c6f5d7"
+    },
+    "to" : {
+      "entityType" : "DEVICE",
+      "id" : "d4f7f540-1f53-11ed-8d7d-7b8e9c33fd73"
+    },
+    "type" : "Uses",
+    "typeGroup" : "COMMON"
+  } ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ {
+      "booleanValue" : false,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "active",
+      "lastUpdateTs" : 1670078699942,
+      "longValue" : null,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "inactivityAlarmTime",
+      "lastUpdateTs" : 1670078699942,
+      "longValue" : 1670078699621,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastActivityTime",
+      "lastUpdateTs" : 1670078072110,
+      "longValue" : 1670078069103,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastConnectTime",
+      "lastUpdateTs" : 1670076009159,
+      "longValue" : 1670076009159,
+      "strValue" : null
+    }, {
+      "booleanValue" : null,
+      "doubleValue" : null,
+      "jsonValue" : null,
+      "key" : "lastDisconnectTime",
+      "lastUpdateTs" : 1670078069115,
+      "longValue" : 1670078069115,
+      "strValue" : null
+    } ],
+    "SHARED_SCOPE" : [ ]
+  }
+}
