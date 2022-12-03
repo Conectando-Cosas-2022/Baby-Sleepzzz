@@ -1,0 +1,648 @@
+{
+  "entityType" : "RULE_CHAIN",
+  "entity" : {
+    "additionalInfo" : {
+      "description" : ""
+    },
+    "configuration" : null,
+    "debugMode" : false,
+    "externalId" : null,
+    "firstRuleNodeId" : {
+      "entityType" : "RULE_NODE",
+      "id" : "78feb4f0-63cc-11ed-a63a-b1a778d5a2d8"
+    },
+    "id" : {
+      "entityType" : "RULE_CHAIN",
+      "id" : "78d1d890-63cc-11ed-a63a-b1a778d5a2d8"
+    },
+    "name" : "LOG llanto",
+    "root" : false,
+    "type" : "CORE"
+  },
+  "metaData" : {
+    "connections" : [ {
+      "fromIndex" : 0,
+      "toIndex" : 1,
+      "type" : "True"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 14,
+      "type" : "Failure"
+    }, {
+      "fromIndex" : 0,
+      "toIndex" : 14,
+      "type" : "False"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 3,
+      "type" : "True"
+    }, {
+      "fromIndex" : 1,
+      "toIndex" : 5,
+      "type" : "False"
+    }, {
+      "fromIndex" : 3,
+      "toIndex" : 12,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 4,
+      "toIndex" : 7,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 5,
+      "toIndex" : 13,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 6,
+      "toIndex" : 10,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 7,
+      "toIndex" : 8,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 8,
+      "toIndex" : 2,
+      "type" : "True"
+    }, {
+      "fromIndex" : 10,
+      "toIndex" : 11,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 11,
+      "toIndex" : 9,
+      "type" : "True"
+    }, {
+      "fromIndex" : 12,
+      "toIndex" : 4,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 13,
+      "toIndex" : 6,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 14,
+      "toIndex" : 19,
+      "type" : "True"
+    }, {
+      "fromIndex" : 15,
+      "toIndex" : 16,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 16,
+      "toIndex" : 17,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 17,
+      "toIndex" : 18,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 18,
+      "toIndex" : 21,
+      "type" : "Success"
+    }, {
+      "fromIndex" : 19,
+      "toIndex" : 15,
+      "type" : "False"
+    }, {
+      "fromIndex" : 21,
+      "toIndex" : 20,
+      "type" : "True"
+    } ],
+    "firstNodeIndex" : 0,
+    "nodes" : [ {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 45,
+        "layoutY" : 244
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "return metadata.deviceName === \"Microfono\";",
+        "tbelScript" : "return metadata.deviceName == \"Microfono\";"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "78feb4f0-63cc-11ed-a63a-b1a778d5a2d8"
+      },
+      "name" : "es microfono?",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 47,
+        "layoutY" : 327
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "return msg.llora;",
+        "tbelScript" : "return msg.llora;"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "79123cf0-63cc-11ed-a63a-b1a778d5a2d8"
+      },
+      "name" : "agarro att llora",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1752,
+        "layoutY" : 350
+      },
+      "configuration" : {
+        "scope" : "SERVER_SCOPE",
+        "notifyDevice" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "791941d0-63cc-11ed-a63a-b1a778d5a2d8"
+      },
+      "name" : "guardo evento",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 322,
+        "layoutY" : 352
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        },
+        "telemetry" : false,
+        "attrMapping" : {
+          "SLEEP_LOG" : "SLEEP_LOG"
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7927e7d0-63cc-11ed-a63a-b1a778d5a2d8"
+      },
+      "name" : "relacion asset",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 924,
+        "layoutY" : 350
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchToData" : false,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "SLEEP_LOG" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "792cf0e0-63cc-11ed-a63a-b1a778d5a2d8"
+      },
+      "name" : "add event",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 319,
+        "layoutY" : 409
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        },
+        "telemetry" : false,
+        "attrMapping" : {
+          "SLEEP_LOG" : "SLEEP_LOG"
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "79307350-63cc-11ed-a63a-b1a778d5a2d8"
+      },
+      "name" : "relacion asset",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 927,
+        "layoutY" : 412
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchToData" : false,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "SLEEP_LOG" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "79377830-63cc-11ed-a63a-b1a778d5a2d8"
+      },
+      "name" : "add event",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1197,
+        "layoutY" : 346
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var methdata = metadata;\nvar logg = JSON.parse(methdata.ss_SLEEP_LOG); //obtengo log de atributo\nvar events = logg.events; // obtendo eventos del log (array)\nvar elBebeLlora = logg.crying; //estaba llorando el bebé? (bool)\n\nif(!elBebeLlora){\n    // creamos fecha y hora formateada como queremos para display\n    const D = new Date();\n    \n        //adaptamos formato hora a hora actual\n    var auxH = D.getHours()-3;\n    var auxM = D.getMinutes();\n    var auxS = D.getSeconds();\n    var auxD = D.getDate();\n    if(auxH < 0){ \n        auxH = auxH + 24;\n        auxD = auxD -1;\n    }\n    if(auxH<10){auxH = \"0\" + auxH;}\n    if(auxM<10){auxM = \"0\" + auxM;}\n    if(auxS<10){auxS = \"0\" + auxS;}\n    \n    //formatos fecha y hora\n    const formattedDate = auxD + \"/\" + ( D.getMonth() + 1 ) + \"/\" + D.getFullYear(); \n    const formattedTime = (auxH) + \":\" + auxM + \":\" + auxS;\n    \n    //creamos evento para agregar\n    var msg = {\n      cause: \"LLANTO\",\n      date: formattedDate,\n      time: formattedTime\n    };\n    \n    events[logg.eventsAmount] = msg;\n    logg.events = events;\n    logg.crying = true;\n    logg.eventsAmount++;\n    \n    methdata.ss_SLEEP_LOG = logg;\n    var msg = {\"SLEEP_LOG\":logg};\n    var msgType = 'POST_ATTRIBUTES_REQUEST';\n\n} else {\n    var msg = false;    \n}\n\nvar methdata = {\n    \"deviceName\": \"Microfono\",\n    \"deviceType\": \"thermometer\",\n    \"ts\": \"1666742028950\"\n};\n\nreturn {msg: msg, metadata: methdata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "793d92b0-63cc-11ed-a63a-b1a778d5a2d8"
+      },
+      "name" : "agrega llanto",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1448,
+        "layoutY" : 350
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "return msg != false;",
+        "tbelScript" : "return msg == false;"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7941ff80-63cc-11ed-a63a-b1a778d5a2d8"
+      },
+      "name" : "reviso si msg fue correcto",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1751,
+        "layoutY" : 405
+      },
+      "configuration" : {
+        "scope" : "SERVER_SCOPE",
+        "notifyDevice" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "7943fb50-63cc-11ed-a63a-b1a778d5a2d8"
+      },
+      "name" : "guardo evento",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1198,
+        "layoutY" : 410
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var methdata = metadata;\nvar logg = JSON.parse(methdata.ss_SLEEP_LOG); //obtengo log de atributo\nvar events = logg.events; // obtendo eventos del log (array)\nvar elBebeLlora = logg.crying; //estaba llorando el bebé? (bool)\n\nif(elBebeLlora){\n    // creamos fecha y hora formateada como queremos para display\n    const D = new Date();\n    \n        //adaptamos formato hora a hora actual\n    var auxH = D.getHours()-3;\n    var auxM = D.getMinutes();\n    var auxS = D.getSeconds();\n    var auxD = D.getDate();\n    if(auxH < 0){ \n        auxH = auxH + 24;\n        auxD = auxD -1;\n    }\n    if(auxH<10){auxH = \"0\" + auxH;}\n    if(auxM<10){auxM = \"0\" + auxM;}\n    if(auxS<10){auxS = \"0\" + auxS;}\n    \n    //formatos fecha y hora\n    const formattedDate = auxD + \"/\" + ( D.getMonth() + 1 ) + \"/\" + D.getFullYear(); \n    const formattedTime = (auxH) + \":\" + auxM + \":\" + auxS;\n    \n    //creamos evento para agregar\n    var msg = {\n      cause: \"NO MÁS LLANTO\",\n      date: formattedDate,\n      time: formattedTime\n    };\n    \n    events[logg.eventsAmount] = msg;\n    logg.events = events;\n    logg.crying = false;\n    logg.eventsAmount++;\n    \n    methdata.ss_SLEEP_LOG = logg;\n    var msg = {\"SLEEP_LOG\":logg};\n    var msgType = 'POST_ATTRIBUTES_REQUEST';\n    \n} else {\n    var msg = false;    \n}\n\nvar methdata = {\n    \"deviceName\": \"Microfono\",\n    \"deviceType\": \"thermometer\",\n    \"ts\": \"1666742028950\"\n};\n\nreturn {msg: msg, metadata: methdata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "79492b70-63cc-11ed-a63a-b1a778d5a2d8"
+      },
+      "name" : "agrega no más llanto",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1447,
+        "layoutY" : 409
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "return msg != false;",
+        "tbelScript" : "return msg == false;"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "794a3ce0-63cc-11ed-a63a-b1a778d5a2d8"
+      },
+      "name" : "reviso si msg fue correcto",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 617,
+        "layoutY" : 355
+      },
+      "configuration" : {
+        "originatorSource" : "RELATED",
+        "entityType" : null,
+        "entityNamePattern" : null,
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "794c86d0-63cc-11ed-a63a-b1a778d5a2d8"
+      },
+      "name" : "cambio a asset",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 615,
+        "layoutY" : 413
+      },
+      "configuration" : {
+        "originatorSource" : "RELATED",
+        "entityType" : null,
+        "entityNamePattern" : null,
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "Contains",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "794e3480-63cc-11ed-a63a-b1a778d5a2d8"
+      },
+      "name" : "cambio a asset",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 321,
+        "layoutY" : 106
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "return metadata.deviceName === \"Temperatura y Humedad\";",
+        "tbelScript" : "return metadata.deviceName == \"Microfono\";"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f1aa1540-66db-11ed-81ab-ffa1a15f3161"
+      },
+      "name" : "es temp-hum?",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 584,
+        "layoutY" : 124
+      },
+      "configuration" : {
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "ContainsTH",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        },
+        "telemetry" : false,
+        "attrMapping" : {
+          "SLEEP_LOG" : "SLEEP_LOG"
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f1b008b0-66db-11ed-81ab-ffa1a15f3161"
+      },
+      "name" : "relacion asset TH",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetRelatedAttributeNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 884,
+        "layoutY" : 106
+      },
+      "configuration" : {
+        "originatorSource" : "RELATED",
+        "entityType" : null,
+        "entityNamePattern" : null,
+        "relationsQuery" : {
+          "fetchLastLevelOnly" : false,
+          "direction" : "TO",
+          "maxLevel" : 1,
+          "filters" : [ {
+            "relationType" : "ContainsTH",
+            "entityTypes" : [ "ASSET" ]
+          } ]
+        }
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f1b6e680-66db-11ed-81ab-ffa1a15f3161"
+      },
+      "name" : "cambio a asset TH",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbChangeOriginatorNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 1141,
+        "layoutY" : 104
+      },
+      "configuration" : {
+        "tellFailureIfAbsent" : true,
+        "fetchToData" : false,
+        "clientAttributeNames" : [ ],
+        "sharedAttributeNames" : [ ],
+        "serverAttributeNames" : [ "SLEEP_LOG" ],
+        "latestTsKeyNames" : [ ],
+        "getLatestValueWithTs" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f1b9ccb0-66db-11ed-81ab-ffa1a15f3161"
+      },
+      "name" : "add event",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.metadata.TbGetAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 409,
+        "layoutY" : 215
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "var methdata = metadata;\nvar logg = JSON.parse(methdata.ss_SLEEP_LOG); //obtengo log de atributo\nvar events = logg.events; // obtendo eventos del log (array)\nvar elNeneEstaMojado = logg.wet;\n\nif(elNeneEstaMojado){\n    // creamos fecha y hora formateada como queremos para display\n    const D = new Date();\n    \n    //adaptamos formato hora a hora actual\n    var auxH = D.getHours()-3;\n    var auxM = D.getMinutes();\n    var auxS = D.getSeconds();\n    var auxD = D.getDate();\n    if(auxH < 0){ \n        auxH = auxH + 24;\n        auxD = auxD -1;\n    }\n    if(auxH<10){auxH = \"0\" + auxH;}\n    if(auxM<10){auxM = \"0\" + auxM;}\n    if(auxS<10){auxS = \"0\" + auxS;}\n    \n    //formatos fecha y hora\n    const formattedDate = auxD + \"/\" + ( D.getMonth() + 1 ) + \"/\" + D.getFullYear(); \n    const formattedTime = (auxH) + \":\" + auxM + \":\" + auxS;\n    \n    //creamos evento para agregar\n    var msg = {\n        cause: \"CAMBIO DE SÁBANAS\",\n        date: formattedDate,\n        time: formattedTime\n    };\n    \n    events[logg.eventsAmount] = msg;\n    logg.events = events;\n    logg.eventsAmount++;\n    logg.wet = false;\n    \n    methdata.ss_SLEEP_LOG = logg;\n    var msg = {\"SLEEP_LOG\":logg};\n    var msgType = 'POST_ATTRIBUTES_REQUEST';\n    \n    var methdata = {\n        \"deviceName\": \"Temperatura y Humedad\",\n        \"deviceType\": \"thermometer\",\n        \"ts\": \"1666742028950\"\n    };\n} else {\n    var msg = false;\n}\nreturn {msg: msg, metadata: methdata, msgType: msgType};",
+        "tbelScript" : "return {msg: msg, metadata: metadata, msgType: msgType};"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f1bcb2e0-66db-11ed-81ab-ffa1a15f3161"
+      },
+      "name" : "agrega cambio de sabanas",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.transform.TbTransformMsgNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 540,
+        "layoutY" : 31
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "return msg",
+        "tbelScript" : "return msg.llora;"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f1c08370-66db-11ed-81ab-ffa1a15f3161"
+      },
+      "name" : "agarro att estado",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 965,
+        "layoutY" : 215
+      },
+      "configuration" : {
+        "scope" : "SERVER_SCOPE",
+        "notifyDevice" : false
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f1c31b80-66db-11ed-81ab-ffa1a15f3161"
+      },
+      "name" : "guardo evento",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.telemetry.TbMsgAttributesNode"
+    }, {
+      "additionalInfo" : {
+        "description" : "",
+        "layoutX" : 696,
+        "layoutY" : 217
+      },
+      "configuration" : {
+        "scriptLang" : "JS",
+        "jsScript" : "return msg != false;",
+        "tbelScript" : "return msg == false;"
+      },
+      "createdTime" : 0,
+      "debugMode" : true,
+      "externalId" : null,
+      "id" : {
+        "entityType" : "RULE_NODE",
+        "id" : "f1c7d670-66db-11ed-81ab-ffa1a15f3161"
+      },
+      "name" : "reviso si msg fue correcto",
+      "ruleChainId" : null,
+      "type" : "org.thingsboard.rule.engine.filter.TbJsFilterNode"
+    } ],
+    "ruleChainConnections" : null
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}
