@@ -1,0 +1,1277 @@
+{
+  "entityType" : "DASHBOARD",
+  "entity" : {
+    "assignedCustomers" : null,
+    "configuration" : {
+      "description" : "",
+      "widgets" : {
+        "513d9c70-4aa0-925e-71e7-55d01421e52e" : {
+          "isSystemType" : true,
+          "bundleAlias" : "digital_gauges",
+          "typeAlias" : "digital_vertical_bar",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 2.5,
+          "sizeY" : 4.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "76092766-442e-5a16-1cfe-a1ac99041645",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "tempObj",
+                "type" : "timeseries",
+                "label" : "tempObj",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.5379246129685109
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1669256349081,
+                  "endTimeMs" : 1669342749081
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 2500
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#000000",
+            "color" : "rgba(18,86,232,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "minValue" : 0,
+              "maxValue" : 50,
+              "gaugeType" : "verticalBar",
+              "defaultColor" : "#3fdf15",
+              "gaugeWidthScale" : 0.75,
+              "neonGlowBrightness" : 20,
+              "dashThickness" : 1.2,
+              "roundedLineCap" : false,
+              "gaugeColor" : "#171a1c",
+              "useFixedLevelColor" : true,
+              "fixedLevelColors" : [ ],
+              "showTitle" : false,
+              "showUnitTitle" : true,
+              "unitTitle" : "BABY TEMP",
+              "showTimestamp" : true,
+              "timestampFormat" : "dd/MM/yy - HH:mm:ss",
+              "labelFont" : {
+                "family" : "Roboto",
+                "size" : 8,
+                "style" : "normal",
+                "weight" : "500"
+              },
+              "showValue" : true,
+              "valueFont" : {
+                "family" : "Segment7Standard",
+                "style" : "normal",
+                "weight" : "500",
+                "size" : 14
+              },
+              "showMinMax" : true,
+              "minMaxFont" : {
+                "family" : "Segment7Standard",
+                "size" : 8,
+                "style" : "normal",
+                "weight" : "normal",
+                "color" : "#cccccc"
+              },
+              "showTicks" : false,
+              "animation" : true,
+              "animationDuration" : 500,
+              "animationRule" : "linear"
+            },
+            "title" : "New Digital vertical bar",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "widgetStyle" : { },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "513d9c70-4aa0-925e-71e7-55d01421e52e"
+        },
+        "68fb9ba6-de72-5cd6-8653-4c0c135f3bf9" : {
+          "isSystemType" : true,
+          "bundleAlias" : "digital_gauges",
+          "typeAlias" : "digital_speedometer",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "76092766-442e-5a16-1cfe-a1ac99041645",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "humidity",
+                "type" : "timeseries",
+                "label" : "humidity",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.5767115093231467
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1669256349083,
+                  "endTimeMs" : 1669342749083
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 2500
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#000000",
+            "color" : "rgba(255, 254, 254, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "minValue" : 0,
+              "maxValue" : 100,
+              "gaugeType" : "arc",
+              "gaugeWidthScale" : 0.75,
+              "neonGlowBrightness" : 40,
+              "dashThickness" : 1.5,
+              "roundedLineCap" : false,
+              "gaugeColor" : "#171a1c",
+              "useFixedLevelColor" : false,
+              "levelColors" : [ "#008000", "#fbc02d", "#f44336" ],
+              "showTitle" : false,
+              "showUnitTitle" : true,
+              "unitTitle" : "HUMEDAD",
+              "showTimestamp" : false,
+              "labelFont" : {
+                "family" : "Roboto",
+                "size" : 8,
+                "style" : "normal",
+                "weight" : "500"
+              },
+              "showValue" : true,
+              "valueFont" : {
+                "family" : "Segment7Standard",
+                "style" : "normal",
+                "weight" : "500",
+                "size" : 32
+              },
+              "showMinMax" : true,
+              "minMaxFont" : {
+                "family" : "Segment7Standard",
+                "size" : 12,
+                "style" : "normal",
+                "weight" : "500",
+                "color" : "#ffffff"
+              },
+              "showTicks" : false,
+              "animation" : true,
+              "animationDuration" : 500,
+              "animationRule" : "linear"
+            },
+            "title" : "New Digital speedometer",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "widgetStyle" : { },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "68fb9ba6-de72-5cd6-8653-4c0c135f3bf9"
+        },
+        "d4271ac9-ed5f-6eba-84c3-2bf73268c7fc" : {
+          "isSystemType" : true,
+          "bundleAlias" : "digital_gauges",
+          "typeAlias" : "digital_thermometer",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 3,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "9dbac885-b730-0eb9-33ff-670beba2ebb0",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "frecuencia",
+                "type" : "timeseries",
+                "label" : "frecuencia",
+                "color" : "#f33121",
+                "settings" : { },
+                "_hash" : 0.5544060723027384
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1669256349083,
+                  "endTimeMs" : 1669342749083
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 2500
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#000000",
+            "color" : "rgba(255, 254, 254, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "minValue" : 0,
+              "maxValue" : 5000,
+              "gaugeType" : "arc",
+              "gaugeWidthScale" : 1,
+              "neonGlowBrightness" : 35,
+              "dashThickness" : 1,
+              "roundedLineCap" : false,
+              "gaugeColor" : "#333333",
+              "useFixedLevelColor" : false,
+              "levelColors" : [ "#304ffe", "#7e57c2", "#ff4081", "#d32f2f" ],
+              "showTitle" : true,
+              "title" : "FRECUENCY",
+              "titleFont" : {
+                "family" : "Roboto",
+                "size" : 12,
+                "style" : "normal",
+                "weight" : "500",
+                "color" : null
+              },
+              "showUnitTitle" : false,
+              "showTimestamp" : false,
+              "showValue" : true,
+              "valueFont" : {
+                "family" : "Segment7Standard",
+                "style" : "normal",
+                "weight" : "500",
+                "size" : 18
+              },
+              "showMinMax" : true,
+              "minMaxFont" : {
+                "family" : "Segment7Standard",
+                "size" : 12,
+                "style" : "normal",
+                "weight" : "500"
+              },
+              "showTicks" : false,
+              "animation" : true,
+              "animationDuration" : 500,
+              "animationRule" : "linear"
+            },
+            "title" : "Frecuency",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "widgetStyle" : { },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "titleIcon" : "",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "units" : " H2",
+            "decimals" : 1
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "d4271ac9-ed5f-6eba-84c3-2bf73268c7fc"
+        },
+        "39189dae-e09c-0512-322b-c68867958f77" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "simple_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "972dc8e2-7bff-bd8e-c2cc-b5dfe42aee03",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "ip",
+                "type" : "attribute",
+                "label" : "ip",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.42019442734348234
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1669256349084,
+                  "endTimeMs" : 1669342749084
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 2500
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#ff5722",
+            "color" : "rgba(255, 255, 255, 0.87)",
+            "padding" : "1px",
+            "settings" : {
+              "labelPosition" : "top"
+            },
+            "title" : "New Simple card",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "units" : "",
+            "decimals" : 0,
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "widgetStyle" : {
+              "fontSize" : "4px",
+              "fontWeight" : 100
+            },
+            "actions" : {
+              "headerButton" : [ ]
+            },
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "legendConfig" : {
+              "direction" : "column",
+              "position" : "bottom",
+              "sortDataKeys" : false,
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : false,
+              "showTotal" : false,
+              "showLatest" : false
+            },
+            "titleIcon" : "",
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "5px"
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "39189dae-e09c-0512-322b-c68867958f77"
+        },
+        "a2f8d38b-d449-36d2-8247-fb427977c2a6" : {
+          "isSystemType" : true,
+          "bundleAlias" : "control_widgets",
+          "typeAlias" : "led_indicator",
+          "type" : "rpc",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 2.5,
+          "sizeY" : 2.5,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "#e6e7e8",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Led indicator",
+              "ledColor" : "#4caf50",
+              "initialValue" : true,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "attribute",
+              "valueAttribute" : "motor_state",
+              "parseValueFunction" : "return data ? true : false;"
+            },
+            "title" : "New Led indicator",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDeviceAliasIds" : [ "3bc57076-2d1c-9e70-21b5-ea870f814e15" ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "a2f8d38b-d449-36d2-8247-fb427977c2a6"
+        },
+        "27f7f80e-0394-1e81-0a42-95dd02d25977" : {
+          "isSystemType" : true,
+          "bundleAlias" : "control_widgets",
+          "typeAlias" : "led_indicator",
+          "type" : "rpc",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 2.5,
+          "sizeY" : 2.5,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "#e6e7e8",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Led indicator",
+              "ledColor" : "#ff0000",
+              "initialValue" : true,
+              "performCheckStatus" : false,
+              "retrieveValueMethod" : "attribute",
+              "valueAttribute" : "camera_state",
+              "parseValueFunction" : "return data ? true : false;"
+            },
+            "title" : "New Led indicator",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDeviceAliasIds" : [ "972dc8e2-7bff-bd8e-c2cc-b5dfe42aee03" ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "27f7f80e-0394-1e81-0a42-95dd02d25977"
+        },
+        "7d51bae4-4f08-a3af-af26-a0bcea2488fc" : {
+          "isSystemType" : true,
+          "bundleAlias" : "control_widgets",
+          "typeAlias" : "switch_control",
+          "type" : "rpc",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 4,
+          "sizeY" : 2.5,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "#e6e7e8",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Switch control",
+              "showOnOffLabels" : true,
+              "initialValue" : false,
+              "retrieveValueMethod" : "rpc",
+              "getValueMethod" : "checkStatus",
+              "parseValueFunction" : "return data ? true : false;",
+              "setValueMethod" : "controlCamera",
+              "convertValueFunction" : "return value;",
+              "requestTimeout" : 15000,
+              "requestPersistent" : false
+            },
+            "title" : "New Switch Control",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDeviceAliasIds" : [ "972dc8e2-7bff-bd8e-c2cc-b5dfe42aee03" ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "7d51bae4-4f08-a3af-af26-a0bcea2488fc"
+        },
+        "2e0a6f4d-dcf0-3702-799a-a181815ad479" : {
+          "isSystemType" : true,
+          "bundleAlias" : "control_widgets",
+          "typeAlias" : "round_switch",
+          "type" : "rpc",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 2.5,
+          "sizeY" : 2,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "#e6e7e8",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Motor switch",
+              "initialValue" : false,
+              "retrieveValueMethod" : "attribute",
+              "valueKey" : "motor_state",
+              "parseValueFunction" : "return data ? true : false;",
+              "setValueMethod" : "controlMotor",
+              "convertValueFunction" : "return value;",
+              "requestTimeout" : 500,
+              "requestPersistent" : false
+            },
+            "title" : "New Round switch",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 2,
+            "datasources" : [ ],
+            "targetDeviceAliasIds" : [ "3bc57076-2d1c-9e70-21b5-ea870f814e15" ]
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "2e0a6f4d-dcf0-3702-799a-a181815ad479"
+        },
+        "a274449c-b82e-dc7f-519f-bf497a1d26fe" : {
+          "isSystemType" : true,
+          "bundleAlias" : "control_widgets",
+          "typeAlias" : "knob_control",
+          "type" : "rpc",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 5,
+          "sizeY" : 4.5,
+          "config" : {
+            "targetDeviceAliases" : [ ],
+            "showTitle" : false,
+            "backgroundColor" : "#e6e7e8",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "title" : "Knob control",
+              "initialValue" : 0,
+              "minValue" : 0,
+              "maxValue" : 255,
+              "getValueMethod" : "checkMotor",
+              "setValueMethod" : "controlMotorVariable",
+              "requestTimeout" : 500,
+              "requestPersistent" : false
+            },
+            "title" : "Motor Control",
+            "dropShadow" : true,
+            "enableFullscreen" : false,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "decimals" : 0,
+            "datasources" : [ ],
+            "targetDeviceAliasIds" : [ "3bc57076-2d1c-9e70-21b5-ea870f814e15" ],
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "a274449c-b82e-dc7f-519f-bf497a1d26fe"
+        },
+        "6bdfdff8-a820-a4df-0b7e-e0bb2612d3be" : {
+          "isSystemType" : true,
+          "bundleAlias" : "charts",
+          "typeAlias" : "basic_timeseries",
+          "type" : "timeseries",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 8,
+          "sizeY" : 5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "76092766-442e-5a16-1cfe-a1ac99041645",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "tempObj",
+                "type" : "timeseries",
+                "label" : "tempObj",
+                "color" : "#af4c59",
+                "settings" : { },
+                "_hash" : 0.0029524951451178616
+              }, {
+                "name" : "humidity",
+                "type" : "timeseries",
+                "label" : "humidity",
+                "color" : "#4c57af",
+                "settings" : { },
+                "_hash" : 0.5109678759124954
+              } ],
+              "latestDataKeys" : [ ]
+            } ],
+            "timewindow" : {
+              "realtime" : {
+                "timewindowMs" : 60000
+              }
+            },
+            "showTitle" : true,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "8px",
+            "settings" : {
+              "shadowSize" : 4,
+              "fontColor" : "#545454",
+              "fontSize" : 10,
+              "xaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "yaxis" : {
+                "showLabels" : true,
+                "color" : "#545454"
+              },
+              "grid" : {
+                "color" : "#545454",
+                "tickColor" : "#DDDDDD",
+                "verticalLines" : true,
+                "horizontalLines" : true,
+                "outlineWidth" : 1
+              },
+              "legend" : {
+                "show" : true,
+                "position" : "nw",
+                "backgroundColor" : "#f0f0f0",
+                "backgroundOpacity" : 0.85,
+                "labelBoxBorderColor" : "rgba(1, 1, 1, 0.45)"
+              },
+              "decimals" : 1,
+              "stack" : false,
+              "tooltipIndividual" : false
+            },
+            "title" : "Baby's Temperature and Humidity",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showTitleIcon" : false,
+            "titleTooltip" : "",
+            "widgetStyle" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : "",
+            "showLegend" : true,
+            "legendConfig" : {
+              "direction" : "column",
+              "position" : "bottom",
+              "sortDataKeys" : false,
+              "showMin" : false,
+              "showMax" : false,
+              "showAvg" : true,
+              "showTotal" : false,
+              "showLatest" : false
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "6bdfdff8-a820-a4df-0b7e-e0bb2612d3be"
+        },
+        "678cd35b-e27b-a47f-1a04-53aa16659f9c" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "html_value_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 7.5,
+          "sizeY" : 3,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "896da31f-8e86-acfd-f565-fd25352cb13b",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "SLEEP_LOG",
+                "type" : "attribute",
+                "label" : "SLEEP_LOG",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.9341676809111223,
+                "aggregationType" : null,
+                "units" : null,
+                "decimals" : null,
+                "funcBody" : null,
+                "usePostProcessing" : null,
+                "postFuncBody" : null
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1669256349084,
+                  "endTimeMs" : 1669342749084
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 2500
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "cardHtml" : "<head>\n    <script>\n        aux = JSON.parse(SLEEP_LOG);\n        aux = aux.events;\n        ${aux}\n    </script>\n</head>\n\n<div class='card'>\n    <div class='content'>\n        <div class='column'>\n            <h1>SLEEPING LOG</h1>\n            <div class='value'>\n                ${SLEEP_LOG}\n                \n            </div>    \n            <div class='description'>\n            \n            </div>\n        </div>\n        \n    </div>\n</div>",
+              "cardCss" : ".card .content{\n    font-weight: bold;\n    font-size: 32px;\n    color: #999;\n    height: 100%;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    padding: 20px;\n    flex-direction: row;\n    width: fit-content;\n}\n\n.card .content .column {\n   display: flex;\n   flex-direction: column;    \n   justify-content: space-around;\n   height: 100%;\n}\n\n.card h1 {\n    text-transform: uppercase;\n    color: #999;\n    font-size: 20px;\n    font-weight: bold;\n    margin: 0;\n    padding-bottom: 10px;\n    line-height: 32px;\n}\n\n.card .value {\n    font-size: 38px;\n    font-weight: 200;\n}\n\n.card .description {\n    font-size: 20px;\n    color: #999;\n}\n"
+            },
+            "title" : "New HTML Value Card",
+            "dropShadow" : false,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : {
+              "headerButton" : [ {
+                "name" : "mostrar eventos",
+                "icon" : "visibility",
+                "useShowWidgetActionFunction" : null,
+                "showWidgetActionFunction" : "return true;",
+                "type" : "custom",
+                "customFunction" : "return widgetContext.data.events",
+                "openInSeparateDialog" : false,
+                "openInPopover" : false,
+                "id" : "49f039d0-9578-fda9-e737-09a0f974bb15"
+              } ]
+            }
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "678cd35b-e27b-a47f-1a04-53aa16659f9c"
+        },
+        "b6a1cd46-f075-732a-0e31-0486bb3704da" : {
+          "isSystemType" : true,
+          "bundleAlias" : "cards",
+          "typeAlias" : "markdown_card",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 5,
+          "sizeY" : 3.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "896da31f-8e86-acfd-f565-fd25352cb13b",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "SLEEP_LOG",
+                "type" : "attribute",
+                "label" : "SLEEP_LOG",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.41143172990374377
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1669256349084,
+                  "endTimeMs" : 1669342749084
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 2500
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#fff",
+            "color" : "rgba(0, 0, 0, 0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "useMarkdownTextFunction" : false,
+              "markdownTextPattern" : "${SLEEP_LOG}"
+            },
+            "title" : "New Markdown/HTML Card",
+            "showTitleIcon" : false,
+            "iconColor" : "rgba(0, 0, 0, 0.87)",
+            "iconSize" : "24px",
+            "titleTooltip" : "",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "widgetStyle" : { },
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "showLegend" : false,
+            "useDashboardTimewindow" : true
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "b6a1cd46-f075-732a-0e31-0486bb3704da"
+        },
+        "0fe2c44a-32e3-6ce6-5143-d4c1172091a1" : {
+          "isSystemType" : true,
+          "bundleAlias" : "digital_gauges",
+          "typeAlias" : "digital_vertical_bar",
+          "type" : "latest",
+          "title" : "New widget",
+          "image" : null,
+          "description" : null,
+          "sizeX" : 2.5,
+          "sizeY" : 4.5,
+          "config" : {
+            "datasources" : [ {
+              "type" : "entity",
+              "name" : null,
+              "entityAliasId" : "76092766-442e-5a16-1cfe-a1ac99041645",
+              "filterId" : null,
+              "dataKeys" : [ {
+                "name" : "tempAmb",
+                "type" : "timeseries",
+                "label" : "tempAmb",
+                "color" : "#2196f3",
+                "settings" : { },
+                "_hash" : 0.016688641319112074
+              } ]
+            } ],
+            "timewindow" : {
+              "displayValue" : "",
+              "selectedTab" : 0,
+              "realtime" : {
+                "realtimeType" : 1,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "history" : {
+                "historyType" : 0,
+                "interval" : 1000,
+                "timewindowMs" : 60000,
+                "fixedTimewindow" : {
+                  "startTimeMs" : 1669982967399,
+                  "endTimeMs" : 1670069367399
+                },
+                "quickInterval" : "CURRENT_DAY"
+              },
+              "aggregation" : {
+                "type" : "AVG",
+                "limit" : 2500
+              }
+            },
+            "showTitle" : false,
+            "backgroundColor" : "#000000",
+            "color" : "rgba(18,86,232,0.87)",
+            "padding" : "0px",
+            "settings" : {
+              "minValue" : 0,
+              "maxValue" : 50,
+              "gaugeType" : "verticalBar",
+              "defaultColor" : "#3fdf15",
+              "gaugeWidthScale" : 0.75,
+              "neonGlowBrightness" : 20,
+              "dashThickness" : 1.2,
+              "roundedLineCap" : false,
+              "gaugeColor" : "#171a1c",
+              "useFixedLevelColor" : false,
+              "levelColors" : [ "#3dfeec", "#f49e36" ],
+              "showTitle" : false,
+              "showUnitTitle" : true,
+              "unitTitle" : "AMBIENT TEMP",
+              "showTimestamp" : false,
+              "labelFont" : {
+                "family" : "Roboto",
+                "size" : 8,
+                "style" : "normal",
+                "weight" : "500"
+              },
+              "showValue" : true,
+              "valueFont" : {
+                "family" : "Segment7Standard",
+                "style" : "normal",
+                "weight" : "500",
+                "size" : 14
+              },
+              "showMinMax" : true,
+              "minMaxFont" : {
+                "family" : "Segment7Standard",
+                "size" : 8,
+                "style" : "normal",
+                "weight" : "normal",
+                "color" : "#cccccc"
+              },
+              "showTicks" : false,
+              "animation" : true,
+              "animationDuration" : 500,
+              "animationRule" : "linear"
+            },
+            "title" : "New Digital vertical bar",
+            "dropShadow" : true,
+            "enableFullscreen" : true,
+            "titleStyle" : {
+              "fontSize" : "16px",
+              "fontWeight" : 400
+            },
+            "widgetStyle" : { },
+            "useDashboardTimewindow" : true,
+            "showLegend" : false,
+            "actions" : { },
+            "widgetCss" : "",
+            "pageSize" : 1024,
+            "noDataDisplayMessage" : ""
+          },
+          "row" : 0,
+          "col" : 0,
+          "id" : "0fe2c44a-32e3-6ce6-5143-d4c1172091a1"
+        }
+      },
+      "states" : {
+        "default" : {
+          "name" : "Monitor BabySleepzzz",
+          "root" : true,
+          "layouts" : {
+            "main" : {
+              "widgets" : {
+                "513d9c70-4aa0-925e-71e7-55d01421e52e" : {
+                  "sizeX" : 2,
+                  "sizeY" : 4,
+                  "row" : 0,
+                  "col" : 0
+                },
+                "68fb9ba6-de72-5cd6-8653-4c0c135f3bf9" : {
+                  "sizeX" : 4,
+                  "sizeY" : 4,
+                  "row" : 0,
+                  "col" : 2
+                },
+                "d4271ac9-ed5f-6eba-84c3-2bf73268c7fc" : {
+                  "sizeX" : 5,
+                  "sizeY" : 5,
+                  "row" : 5,
+                  "col" : 0
+                },
+                "39189dae-e09c-0512-322b-c68867958f77" : {
+                  "sizeX" : 8,
+                  "sizeY" : 2,
+                  "row" : 0,
+                  "col" : 9
+                },
+                "a2f8d38b-d449-36d2-8247-fb427977c2a6" : {
+                  "sizeX" : 2,
+                  "sizeY" : 2,
+                  "row" : 2,
+                  "col" : 22
+                },
+                "27f7f80e-0394-1e81-0a42-95dd02d25977" : {
+                  "sizeX" : 2,
+                  "sizeY" : 2,
+                  "row" : 2,
+                  "col" : 15
+                },
+                "7d51bae4-4f08-a3af-af26-a0bcea2488fc" : {
+                  "sizeX" : 4,
+                  "sizeY" : 2,
+                  "row" : 2,
+                  "col" : 9
+                },
+                "2e0a6f4d-dcf0-3702-799a-a181815ad479" : {
+                  "sizeX" : 2,
+                  "sizeY" : 2,
+                  "row" : 0,
+                  "col" : 22
+                },
+                "a274449c-b82e-dc7f-519f-bf497a1d26fe" : {
+                  "sizeX" : 4,
+                  "sizeY" : 4,
+                  "row" : 0,
+                  "col" : 18
+                },
+                "6bdfdff8-a820-a4df-0b7e-e0bb2612d3be" : {
+                  "sizeX" : 8,
+                  "sizeY" : 5,
+                  "row" : 5,
+                  "col" : 5
+                },
+                "678cd35b-e27b-a47f-1a04-53aa16659f9c" : {
+                  "sizeX" : 24,
+                  "sizeY" : 11,
+                  "row" : 13,
+                  "col" : 0
+                },
+                "b6a1cd46-f075-732a-0e31-0486bb3704da" : {
+                  "sizeX" : 11,
+                  "sizeY" : 5,
+                  "row" : 5,
+                  "col" : 13
+                },
+                "0fe2c44a-32e3-6ce6-5143-d4c1172091a1" : {
+                  "sizeX" : 2,
+                  "sizeY" : 4,
+                  "row" : 0,
+                  "col" : 6
+                }
+              },
+              "gridSettings" : {
+                "backgroundColor" : "#eeeeee",
+                "columns" : 24,
+                "margin" : 10,
+                "backgroundSizeMode" : "100%"
+              }
+            }
+          }
+        }
+      },
+      "entityAliases" : {
+        "76092766-442e-5a16-1cfe-a1ac99041645" : {
+          "id" : "76092766-442e-5a16-1cfe-a1ac99041645",
+          "alias" : "Temp - Humedad",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "d4f7f540-1f53-11ed-8d7d-7b8e9c33fd73"
+            }
+          }
+        },
+        "9dbac885-b730-0eb9-33ff-670beba2ebb0" : {
+          "id" : "9dbac885-b730-0eb9-33ff-670beba2ebb0",
+          "alias" : "Microfono",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "c74fb1c0-3ad4-11ed-b827-c9be76c6f5d7"
+            }
+          }
+        },
+        "972dc8e2-7bff-bd8e-c2cc-b5dfe42aee03" : {
+          "id" : "972dc8e2-7bff-bd8e-c2cc-b5dfe42aee03",
+          "alias" : "Camara",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : false,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "85ce37f0-54bd-11ed-a339-0708081d40ce"
+            }
+          }
+        },
+        "3bc57076-2d1c-9e70-21b5-ea870f814e15" : {
+          "id" : "3bc57076-2d1c-9e70-21b5-ea870f814e15",
+          "alias" : "Motor",
+          "filter" : {
+            "type" : "singleEntity",
+            "resolveMultiple" : true,
+            "singleEntity" : {
+              "entityType" : "DEVICE",
+              "id" : "0bb4b220-54a2-11ed-b827-c9be76c6f5d7"
+            }
+          }
+        },
+        "896da31f-8e86-acfd-f565-fd25352cb13b" : {
+          "id" : "896da31f-8e86-acfd-f565-fd25352cb13b",
+          "alias" : "BabySleepzzz",
+          "filter" : {
+            "type" : "singleEntity",
+            "singleEntity" : {
+              "entityType" : "ASSET",
+              "id" : "98204b20-5fa1-11ed-885b-d1d049781439"
+            },
+            "resolveMultiple" : false
+          }
+        }
+      },
+      "filters" : { },
+      "timewindow" : {
+        "displayValue" : "",
+        "hideInterval" : false,
+        "hideLastInterval" : false,
+        "hideQuickInterval" : false,
+        "hideAggregation" : false,
+        "hideAggInterval" : false,
+        "hideTimezone" : false,
+        "selectedTab" : 0,
+        "realtime" : {
+          "realtimeType" : 0,
+          "interval" : 1000,
+          "timewindowMs" : 60000,
+          "quickInterval" : "CURRENT_DAY"
+        },
+        "history" : {
+          "historyType" : 0,
+          "interval" : 1000,
+          "timewindowMs" : 60000,
+          "fixedTimewindow" : {
+            "startTimeMs" : 1663804769911,
+            "endTimeMs" : 1663891169911
+          },
+          "quickInterval" : "CURRENT_DAY"
+        },
+        "aggregation" : {
+          "type" : "AVG",
+          "limit" : 2500
+        }
+      },
+      "settings" : {
+        "stateControllerId" : "entity",
+        "showTitle" : false,
+        "showDashboardsSelect" : true,
+        "showEntitiesSelect" : true,
+        "showDashboardTimewindow" : true,
+        "showDashboardExport" : true,
+        "toolbarAlwaysOpen" : true
+      }
+    },
+    "externalId" : null,
+    "id" : {
+      "entityType" : "DASHBOARD",
+      "id" : "cbf2a2a0-1f59-11ed-8d7d-7b8e9c33fd73"
+    },
+    "image" : null,
+    "mobileHide" : false,
+    "mobileOrder" : null,
+    "name" : "Monitor BabySleepzzz",
+    "title" : "Monitor BabySleepzzz"
+  },
+  "relations" : [ ],
+  "attributes" : {
+    "SERVER_SCOPE" : [ ]
+  }
+}
